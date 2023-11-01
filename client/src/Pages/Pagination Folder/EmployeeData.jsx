@@ -32,6 +32,7 @@ const EmployeeData = () => {
       let res = await axios.get(`http://localhost:4000/getData/${value}`);
       if (res.status == 200) {
         setAllData(res.data.rawData);
+        console.log("toatlPages", res.data.totalPages);
       } else {
         console.log("some error");
       }
@@ -42,6 +43,7 @@ const EmployeeData = () => {
 
   return (
     <div>
+      <NavLink to={"/infiniteComponent"}>Infinite Scrolling Component</NavLink>
       <table>
         <thead>
           <tr>
